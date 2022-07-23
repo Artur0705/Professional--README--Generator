@@ -32,11 +32,12 @@ THEN I am taken to the corresponding section of the README
 ## Worked on
 - Created a application that generates a readme file based on user answers
 - Ensured that acceptance criteria met.
-- - Click [Screenshot](#screenshot) to see the page screenshot and animation.
+- Click [Screenshot](#screenshot) to see the page screenshot and animation.
 
-## Demo
+## Demo https://drive.google.com/file/d/1pBG04UAr1WMtTD8ZoR_YzbdwxU0u9-my/view
 
 URL: 
 
 ## Screenshot
-![image]()
+![image](./media/Screenshot1.png)
+![image](./media/Screenshot.png)

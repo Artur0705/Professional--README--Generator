@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Choices = require("inquirer/lib/objects/choices");
 
-const generateMarkdown = require("./utils/generateMarkdown.js");
-// TODO: Create an array of questions for user input
+const generateTemplate = require("./utils/generateMarkdown.js");
+// Array of questions for user input
 const questions = [
     {
         type: "input",
@@ -63,6 +63,20 @@ const questions = [
 
     {
         type: "input",
+        name: "github",
+        message: "What is your GitHub username?",
+        validate: (value) => {
+            if (value) {
+                return true;
+            } else {
+                return "Please enter your GitHub username!"
+            }
+
+        },
+    },
+
+    {
+        type: "input",
         name: "install",
         message: "What are the required steps to install?",
         validate: (value) => {
@@ -89,13 +103,42 @@ const questions = [
         },
     },
 
+    {
+        type: "input",
+        name: "test",
+        message: "What commands should be used to run test?",
+        default: "npm test"
+        
+    },
+
+    {
+        type: "input",
+        name: "contributors",
+        message: "Please enter information about contributing"
+    }
+
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFileSync(`./${fileName.toUpperCase().split(" ").join(" ")}.md`, data, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Your README file has been generated")
+        }
+    })
+}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Function to initialize app
+function init() {
+    inquirer.prompt(questions)
+    .then((data) => {
+        const template = generateTemplate(data)
+        writeToFile(data.title, template);
+
+    })
+}
 
 // Function call to initialize app
 init();

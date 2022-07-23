@@ -34,9 +34,9 @@ THEN I am taken to the corresponding section of the README
 - Ensured that acceptance criteria met.
 - Click [Screenshot](#screenshot) to see the page screenshot and animation.
 
-## Demo https://drive.google.com/file/d/1pBG04UAr1WMtTD8ZoR_YzbdwxU0u9-my/view
+## Demo 
 
-URL: 
+URL: https://drive.google.com/file/d/1pBG04UAr1WMtTD8ZoR_YzbdwxU0u9-my/view
 
 ## Screenshot
 ![image](./media/Screenshot1.png)
